@@ -1,0 +1,1120 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portafolio académico de Dante Loblein, estudiante de Bachillerato Técnico en Informática.">
+
+    <title>Portafolio | Dante Loblein</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --fondo: #081120;
+            --tarjeta: #101d32;
+            --texto: #f3f7ff;
+            --secundario: #a9b7cc;
+            --turquesa: #70e1cf;
+            --azul: #7aa7ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            background: var(--fondo);
+            color: var(--texto);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* NAVEGACIÓN */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 17, 32, 0.96);
+            border-bottom: 1px solid #26364c;
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--turquesa);
+        }
+
+        .menu {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .menu a {
+            color: var(--secundario);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: var(--turquesa);
+        }
+
+        /* ESTILOS GENERALES */
+
+        .contenedor {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        section {
+            padding: 85px 0;
+        }
+
+        .etiqueta-superior {
+            color: var(--turquesa);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .titulo-seccion {
+            font-size: clamp(30px, 5vw, 43px);
+            font-weight: bold;
+            margin: 12px 0 18px;
+        }
+
+        .descripcion {
+            color: var(--secundario);
+            max-width: 700px;
+        }
+
+        /* INICIO */
+
+        #inicio {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 70px 0;
+        }
+
+        .inicio-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .inicio-texto h1 {
+            font-size: clamp(40px, 6vw, 68px);
+            font-weight: bold;
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .resaltado {
+            color: var(--turquesa);
+        }
+
+        .inicio-texto p {
+            font-size: 18px;
+            color: var(--secundario);
+            margin-bottom: 25px;
+        }
+
+        .foto-contenedor {
+            padding: 12px;
+            border: 1px solid #34465f;
+            border-radius: 25px;
+            background: var(--tarjeta);
+            transform: rotate(2deg);
+        }
+
+        .foto-contenedor img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .pie-foto {
+            color: var(--secundario);
+            font-size: 13px;
+            padding: 12px 5px 3px;
+        }
+
+        .boton {
+            display: inline-block;
+            background: var(--turquesa);
+            color: #081120;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 1px solid var(--turquesa);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background: transparent;
+            color: var(--turquesa);
+        }
+
+        .boton-secundario {
+            display: inline-block;
+            color: white;
+            border: 1px solid #40516a;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 10px;
+            margin-left: 8px;
+            transition: 0.3s;
+        }
+
+        .boton-secundario:hover {
+            border-color: var(--turquesa);
+            color: var(--turquesa);
+        }
+
+        /* TARJETAS */
+
+        .rejilla {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 35px;
+        }
+
+        .tarjeta {
+            background: var(--tarjeta);
+            border: 1px solid #26364c;
+            padding: 25px;
+            border-radius: 18px;
+            transition: 0.3s;
+            min-width: 0;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            border-color: var(--turquesa);
+        }
+
+        .icono {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #193c4b;
+            color: var(--turquesa);
+            border-radius: 13px;
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .tarjeta h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .tarjeta p {
+            color: var(--secundario);
+            font-size: 15px;
+        }
+
+        .etiquetas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .etiqueta {
+            font-size: 12px;
+            color: #c8d6ec;
+            border: 1px solid #34465f;
+            padding: 5px 11px;
+            border-radius: 30px;
+        }
+
+        /* SOBRE MÍ */
+
+        .dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .texto-tarjeta {
+            color: var(--secundario);
+        }
+
+        .frase {
+            background: #102c37;
+            border-left: 4px solid var(--turquesa);
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* PROYECTOS */
+
+        .imagen-proyecto {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .imagen-ilustracion {
+            width: 100%;
+            height: 190px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #16314f, #1c5b69);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--turquesa);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .imagen-ilustracion small {
+            font-size: 13px;
+            color: white;
+            font-weight: normal;
+        }
+
+        /* HABILIDADES */
+
+        .habilidad {
+            margin: 25px 0;
+        }
+
+        .habilidad-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .habilidad-info span:last-child {
+            color: var(--secundario);
+            font-size: 13px;
+        }
+
+        .barra {
+            height: 9px;
+            background: #293952;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progreso {
+            height: 100%;
+            width: var(--nivel);
+            background: linear-gradient(
+                90deg,
+                var(--turquesa),
+                var(--azul)
+            );
+            border-radius: 20px;
+        }
+
+        /* DIARIO */
+
+        .diario-item {
+            border-left: 2px solid var(--turquesa);
+            padding: 0 0 25px 25px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .diario-item::before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--turquesa);
+            border-radius: 50%;
+        }
+
+        .diario-item h3 {
+            margin: 8px 0;
+        }
+
+        .fecha {
+            color: var(--turquesa);
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* CONTACTO */
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        .campo label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .campo input,
+        .campo textarea {
+            width: 100%;
+            background: #091628;
+            border: 1px solid #34465f;
+            color: white;
+            padding: 13px;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .campo input:focus,
+        .campo textarea:focus {
+            outline: 2px solid var(--turquesa);
+        }
+
+        .nota {
+            color: var(--secundario);
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            border-top: 1px solid #26364c;
+            padding: 30px 0;
+            color: var(--secundario);
+            font-size: 13px;
+        }
+
+        .footer-contenido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            color: var(--turquesa);
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        /* DISEÑO PARA CELULARES */
+
+        @media (max-width: 850px) {
+            .inicio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .foto-contenedor {
+                max-width: 450px;
+                margin: auto;
+                transform: none;
+            }
+
+            .rejilla {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            .menu {
+                justify-content: center;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 55px 0;
+            }
+
+            .rejilla,
+            .dos-columnas {
+                grid-template-columns: 1fr;
+            }
+
+            .menu {
+                gap: 10px;
+            }
+
+            .menu a {
+                font-size: 12px;
+            }
+
+            .foto-contenedor img {
+                height: 300px;
+            }
+
+            .boton-secundario {
+                margin: 10px 0 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- MENÚ DE NAVEGACIÓN -->
+
+<header>
+    <nav>
+        <a href="#inicio" class="logo">Dante<span>.</span></a>
+
+        <div class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#diario">Diario</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <!-- INICIO -->
+
+    <section id="inicio">
+        <div class="contenedor inicio-grid">
+
+            <div class="inicio-texto">
+                <span class="etiqueta-superior">
+                    Estudiante de informática
+                </span>
+
+                <h1>
+                    Hola, soy Dante
+                    <span class="resaltado">Loblein.</span>
+                </h1>
+
+                <p>
+                    Soy estudiante de bachillerato técnico en informática,
+                    y me gusta combinar creatividad, lógica y aprendizaje
+                    constante. Además, disfruto del deporte y de explorar
+                    nuevas ideas que me permitan crecer.
+                </p>
+
+                <a href="#proyectos" class="boton">
+                    Ver mis proyectos ↗
+                </a>
+
+                <a href="#sobre-mi" class="boton-secundario">
+                    Conocerme
+                </a>
+            </div>
+
+            <div class="foto-contenedor">
+                <img src="foto.jpg"
+                     alt="Fotografía de una jornada de entrenamiento en el gimnasio">
+
+                <div class="pie-foto">
+                    El deporte también forma parte de mi vida.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+
+    <section id="sobre-mi">
+        <div class="contenedor">
+
+            <span class="etiqueta-superior">Sobre mí</span>
+
+            <h2 class="titulo-seccion">
+                Aprender haciendo.
+            </h2>
+
+            <p class="descripcion">
+                Me gusta aprender haciendo, descubrir nuevas ideas
+                y poner en práctica todo lo que voy adquiriendo.
+            </p>
+
+            <div class="dos-columnas">
+
+                <article class="tarjeta">
+                    <div class="icono">👨‍💻</div>
+
+                    <h3>¿Quién soy?</h3>
+
+                    <p class="texto-tarjeta">
+                        Soy Dante Loblein, estudiante del bachillerato
+                        técnico en informática. Me interesa mucho la
+                        tecnología, los videojuegos, el deporte y todo
+                        lo que me permita seguir aprendiendo cada día.
+                        Actualmente estoy empezando a profundizar en el
+                        desarrollo web y en la creación de proyectos propios.
+                    </p>
+
+                    <div class="etiquetas">
+                        <span class="etiqueta">Deportes</span>
+                        <span class="etiqueta">Videojuegos</span>
+                        <span class="etiqueta">Tecnología</span>
+                    </div>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🎯</div>
+
+                    <h3>Mis objetivos</h3>
+
+                    <p class="texto-tarjeta">
+                        Quiero seguir mejorando en informática,
+                        crear proyectos útiles y aprender a resolver
+                        problemas con lógica y creatividad.
+
+                        Me interesa avanzar paso a paso, practicar
+                        mucho y convertir cada aprendizaje en algo
+                        concreto.
+                    </p>
+
+                    <div class="frase">
+                        Cada proyecto es una oportunidad
+                        para aprender algo nuevo.
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS -->
+
+    <section id="proyectos">
+        <div class="contenedor">
+
+            <span class="etiqueta-superior">
+                Mis trabajos
+            </span>
+
+            <h2 class="titulo-seccion">
+                Proyectos y actividades.
+            </h2>
+
+            <p class="descripcion">
+                Algunos ejemplos de ideas y trabajos relacionados
+                con mi aprendizaje en informática.
+            </p>
+
+            <div class="rejilla">
+
+                <article class="tarjeta">
+
+                    <div class="imagen-ilustracion">
+                        ◷
+                        <span>SmartAgend</span>
+                        <small>Agenda digital</small>
+                    </div>
+
+                    <h3>SmartAgend</h3>
+
+                    <p>
+                        Un proyecto pensado para organizar tareas,
+                        fechas y actividades de forma simple, útil
+                        y fácil de seguir en el día a día.
+                    </p>
+
+                    <div class="etiquetas">
+                        <span class="etiqueta">Organización</span>
+                        <span class="etiqueta">Tecnología</span>
+                    </div>
+
+                </article>
+
+                <article class="tarjeta">
+
+                    <div class="imagen-ilustracion">
+                        &lt;/&gt;
+                        <span>Portafolio web</span>
+                        <small>Desarrollo web</small>
+                    </div>
+
+                    <h3>Mi portafolio</h3>
+
+                    <p>
+                        Este portafolio es una forma de presentar
+                        quién soy, qué estoy aprendiendo y qué
+                        proyectos me motivan a seguir creciendo.
+                    </p>
+
+                    <div class="etiquetas">
+                        <span class="etiqueta">HTML</span>
+                        <span class="etiqueta">CSS</span>
+                        <span class="etiqueta">Bootstrap</span>
+                    </div>
+
+                </article>
+
+                <article class="tarjeta">
+
+                    <div class="imagen-ilustracion">
+                        ▤
+                        <span>Sistemas operativos</span>
+                        <small>Trabajo académico</small>
+                    </div>
+
+                    <h3>Sistemas operativos</h3>
+
+                    <p>
+                        Una investigación sobre cómo funcionan los
+                        sistemas operativos y su relación con el
+                        hardware, los programas y la experiencia de uso.
+                    </p>
+
+                    <div class="etiquetas">
+                        <span class="etiqueta">Investigación</span>
+                        <span class="etiqueta">Informática</span>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HABILIDADES -->
+
+    <section id="habilidades">
+        <div class="contenedor">
+
+            <span class="etiqueta-superior">
+                Mis conocimientos
+            </span>
+
+            <h2 class="titulo-seccion">
+                Habilidades y tecnologías.
+            </h2>
+
+            <p class="descripcion">
+                Estas barras reflejan mi nivel actual y muestran
+                cómo estoy desarrollando cada área de aprendizaje.
+            </p>
+
+            <div class="dos-columnas">
+
+                <article class="tarjeta">
+
+                    <h3>Desarrollo web</h3>
+
+                    <div class="habilidad">
+                        <div class="habilidad-info">
+                            <strong>HTML</strong>
+                            <span>Inicial</span>
+                        </div>
+
+                        <div class="barra">
+                            <div class="progreso"
+                                 style="--nivel:55%"></div>
+                        </div>
+                    </div>
+
+                    <div class="habilidad">
+                        <div class="habilidad-info">
+                            <strong>CSS</strong>
+                            <span>Inicial</span>
+                        </div>
+
+                        <div class="barra">
+                            <div class="progreso"
+                                 style="--nivel:45%"></div>
+                        </div>
+                    </div>
+
+                    <div class="habilidad">
+                        <div class="habilidad-info">
+                            <strong>Bootstrap</strong>
+                            <span>En aprendizaje</span>
+                        </div>
+
+                        <div class="barra">
+                            <div class="progreso"
+                                 style="--nivel:30%"></div>
+                        </div>
+                    </div>
+
+                    <div class="habilidad">
+                        <div class="habilidad-info">
+                            <strong>JavaScript</strong>
+                            <span>En aprendizaje</span>
+                        </div>
+
+                        <div class="barra">
+                            <div class="progreso"
+                                 style="--nivel:20%"></div>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="tarjeta">
+
+                    <h3>Otras habilidades</h3>
+
+                    <div class="habilidad">
+                        <div class="habilidad-info">
+                            <strong>Investigación</strong>
+                            <span>En desarrollo</span>
+                        </div>
+
+                        <div class="barra">
+                            <div class="progreso"
+                                 style="--nivel:60%"></div>
+                        </div>
+                    </div>
+
+                    <div class="habilidad">
+                        <div class="habilidad-info">
+                            <strong>Creatividad</strong>
+                            <span>En desarrollo</span>
+                        </div>
+
+                        <div class="barra">
+                            <div class="progreso"
+                                 style="--nivel:55%"></div>
+                        </div>
+                    </div>
+
+                    <div class="habilidad">
+                        <div class="habilidad-info">
+                            <strong>Diseño visual</strong>
+                            <span>Inicial</span>
+                        </div>
+
+                        <div class="barra">
+                            <div class="progreso"
+                                 style="--nivel:40%"></div>
+                        </div>
+                    </div>
+
+                    <p class="nota">
+                        Los niveles son una referencia personal y pueden
+                        cambiar a medida que siga aprendiendo y practicando.
+                    </p>
+
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DIARIO DE APRENDIZAJE -->
+
+    <section id="diario">
+        <div class="contenedor">
+
+            <span class="etiqueta-superior">
+                Mi experiencia
+            </span>
+
+            <h2 class="titulo-seccion">
+                Diario de aprendizaje.
+            </h2>
+
+            <p class="descripcion">
+                Un registro simple de lo que estoy aprendiendo,
+                los desafíos que enfrento y lo que quiero mejorar.
+            </p>
+
+            <div style="max-width:800px; margin-top:35px;">
+
+                <article class="diario-item">
+                    <span class="fecha">
+                        Etapa 1 · HTML
+                    </span>
+
+                    <h3>Aprendiendo la estructura de una página</h3>
+
+                    <p class="descripcion">
+                        Aprendí que HTML permite estructurar el contenido
+                        de una página con títulos, párrafos, imágenes y enlaces.
+                        Lo más importante es mantener la información ordenada
+                        y clara para que sea fácil de entender.
+                    </p>
+                </article>
+
+                <article class="diario-item">
+                    <span class="fecha">
+                        Etapa 2 · CSS
+                    </span>
+
+                    <h3>Mejorando el diseño visual</h3>
+
+                    <p class="descripcion">
+                        Empecé a trabajar con colores, espacios, bordes
+                        y distribución visual. También entendí que un buen
+                        diseño no solo se ve bien, sino que además debe
+                        funcionar bien en distintos tamaños de pantalla.
+                    </p>
+                </article>
+
+                <article class="diario-item">
+                    <span class="fecha">
+                        Etapa 3 · Desafíos
+                    </span>
+
+                    <h3>Corregir errores y mejorar</h3>
+
+                    <p class="descripcion">
+                        Uno de los mayores desafíos es detectar errores,
+                        revisar detalles y mejorar la experiencia general.
+                        A veces una imagen o un enlace pequeño puede cambiar
+                        mucho la forma en que se percibe una página.
+                    </p>
+                </article>
+
+                <article class="diario-item">
+                    <span class="fecha">
+                        Próximo objetivo
+                    </span>
+
+                    <h3>Seguir aprendiendo</h3>
+
+                    <p class="descripcion">
+                        Quiero seguir aprendiendo, especialmente en JavaScript,
+                        y desarrollar proyectos que me permitan crear soluciones
+                        más completas y útiles en la práctica.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="frase">
+                Reflexión: aprender también significa equivocarse,
+                identificar los errores y buscar soluciones.
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section id="contacto">
+        <div class="contenedor">
+
+            <span class="etiqueta-superior">
+                Contacto
+            </span>
+
+            <h2 class="titulo-seccion">
+                ¿Hablamos?
+            </h2>
+
+            <p class="descripcion">
+                Si te interesa hablar sobre tecnología, proyectos
+                o ideas, podés contactarme sin problema.
+            </p>
+
+            <div class="contacto-grid">
+
+                <article class="tarjeta">
+
+                    <div class="icono">✉</div>
+
+                    <h3>Correo electrónico</h3>
+
+                    <p>
+                        Para consultas académicas, ideas de proyectos
+                        o simplemente para hablar de tecnología.
+                    </p>
+
+                    <p style="margin-top:15px;">
+                        <a href="mailto:dantejmlosa@gmail.com"
+                           style="color:var(--turquesa);">
+                            dantejmlosa@gmail.com
+                        </a>
+                    </p>
+
+                    <p class="nota">
+                        No comparto teléfono ni dirección personal.
+                    </p>
+
+                </article>
+
+                <article class="tarjeta">
+
+                    <h3>Enviar un mensaje</h3>
+
+                    <form id="formulario">
+
+                        <div class="campo">
+                            <label for="nombre">Nombre</label>
+
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                maxlength="80"
+                                placeholder="Tu nombre"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="correo">Correo electrónico</label>
+
+                            <input
+                                type="email"
+                                id="correo"
+                                name="correo"
+                                maxlength="120"
+                                placeholder="tu@correo.com"
+                                required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="mensaje">Mensaje</label>
+
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="5"
+                                maxlength="1500"
+                                placeholder="Escribí tu mensaje..."
+                                required></textarea>
+                        </div>
+
+                        <button class="boton" type="submit">
+                            Preparar mensaje ↗
+                        </button>
+
+                        <p class="nota" id="estado-formulario"
+                           aria-live="polite">
+                            El mensaje se preparará en tu aplicación
+                            de correo. El sitio no guarda los datos.
+                        </p>
+
+                    </form>
+
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+    <div class="contenedor footer-contenido">
+
+        <p>
+            © 2026 Dante Loblein · Portafolio académico
+        </p>
+
+        <div>
+            <a href="#inicio">Inicio</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+
+        <p>
+            Fotografía: archivo personal.
+            Ilustraciones: elaboración propia.
+        </p>
+
+    </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+    const formulario = document.getElementById("formulario");
+
+    formulario.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        if (!formulario.reportValidity()) {
+            return;
+        }
+
+        const nombre = document.getElementById("nombre").value;
+        const correo = document.getElementById("correo").value;
+        const mensaje = document.getElementById("mensaje").value;
+
+        const asunto = encodeURIComponent(
+            "Mensaje desde mi portafolio"
+        );
+
+        const cuerpo = encodeURIComponent(
+            "Nombre: " + nombre +
+            "\nCorreo: " + correo +
+            "\n\nMensaje:\n" + mensaje
+        );
+
+        document.getElementById("estado-formulario").textContent =
+            "Preparando el mensaje en tu aplicación de correo...";
+
+        window.location.href =
+            "mailto:dantejmlosa@gmail.com" +
+            "?subject=" + asunto +
+            "&body=" + cuerpo;
+    });
+</script>
+
+</body>
+</html>
